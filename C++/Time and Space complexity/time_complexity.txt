@@ -1,0 +1,11 @@
+ time complexity = the rate at which the time taken increases with respect to input size
+ big O notation 
+ Can be ignored in time complexity := 
+/* always compute worst case scenario
+   avoid constants
+   avoid lower values in expression */
+
+
+Space complexity = space taken that is memory occupied 
+= big o notaion 
+= auxilary space {space used to solve the problem } + input space 
