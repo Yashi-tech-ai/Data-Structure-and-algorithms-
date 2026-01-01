@@ -19,7 +19,7 @@ using namespace std;
 
 
 /*  Vectors => dynamic so size can be increased 
-vector int<> v;
+vector <int> v;
 v.push_back(1); 
 v.emplace_back(2); // faster than push back 
 vector<pair<int,int>> vec;
@@ -31,7 +31,7 @@ vector<int> v(5); = {0,0,0,0,0}
 vector<int> v1(5,20); = {}
 vector<int> v2(v1) = copy of v1
 
-// acess to vectors
+// access to vectors
 vector<int> :: itertor it = v.begin();
 it++;
 cout << *(it) << " ";
