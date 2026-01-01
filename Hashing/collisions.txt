@@ -1,0 +1,7 @@
+Hashing can be done by three ways :- 
+1.Division method
+2.Folding method
+3. mid square method
+
+collisions occur while hashing so we use differenent methods like 
+linear chaining (using linked list )
