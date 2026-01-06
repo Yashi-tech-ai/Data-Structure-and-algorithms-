@@ -1,7 +1,17 @@
 #include<bits/stdc++.h>
 using namespace std;
 int partition(vector <int> &arr,int low,int high ){
-    
+    int pivot = arr[low];
+    int i = low;
+    int j = high;
+    while(i<j){
+        while(arr[i]<= arr[pivot] && i <=high){
+            i++;
+        }
+        while(arr[j]  >= arr[pivot] && j >= low){
+            j--;
+        }
+    }
 }
 vector <int> quick_sort(vector <int> &arr, int low , int high){
     if(low < high){
