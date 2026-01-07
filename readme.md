@@ -7,4 +7,5 @@ This repository contains my data structures and algorithms practice.
 - Maths → Algorithmic math problems
 - Recursion → Recursion-based problems
 - Hashing → integer and character hashing , also using maps .
-- Sorting → selection sort , bubble sort , insertion sort , merge sort 
+- Sorting → selection sort , bubble sort , insertion sort , merge sort , quick sort
+- arrays → questions on arrays
