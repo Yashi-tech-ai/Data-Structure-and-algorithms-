@@ -1,0 +1,6 @@
+arrays are linear data structure used to store similar datatype 
+
+int arr[6]
+if an array is defined in main function then it contains all garbage values but if defined globally then it will contain 0 in each index
+maximum size of array in main function = 10e6
+maximum size of array in globally = 10e7
