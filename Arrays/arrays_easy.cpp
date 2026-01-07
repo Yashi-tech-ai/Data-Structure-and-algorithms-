@@ -52,7 +52,24 @@ public:
     }
 };
 
+// leetcode problem 26
+// brute = take a set since it unique and keep on inserting in it and then put the index from set back in the array
+// optimal = start from first index and then check if any other number is different than it (2 pointer problem)
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        int i = 0;
+        int n = nums.size();
+        for(int j = 1;j < n;j++){
+            if(nums[i] != nums[j]){
+                i++;
+                nums[i] = nums[j];
 
+            }
+        }
+        return i+1;
+    }
+};
 
 
 int main(){
