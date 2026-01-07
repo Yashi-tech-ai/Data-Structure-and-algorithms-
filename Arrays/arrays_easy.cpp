@@ -32,6 +32,28 @@ int seclargest(int arr[], int n){
     return seclarge ;   
 }
 
+// leetcode problem 1752
+// if breaks that is the rotation appears more than once then the array is invalid according to the question .
+class Solution {
+public:
+    bool check(vector<int>& nums) {
+        int n = nums.size();
+        int breaks = 0;
+
+        for (int i = 0; i < n; i++) {
+            if (nums[i] > nums[(i + 1) % n]) {
+                breaks++;
+            }
+            if (breaks > 1) {
+                return false;
+            }
+        }
+        return true;
+    }
+};
+
+
+
 
 int main(){
    int arr[5] = {3,2,1,5,2};
