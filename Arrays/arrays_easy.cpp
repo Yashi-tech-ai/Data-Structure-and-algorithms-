@@ -71,6 +71,38 @@ public:
     }
 };
 
+// leetcode problem 189 
+// shift all the elements in left and create a temp = arr[0] for first index = for shifitng by 1 place 
+// for shifting by K places 
+/* brute method = O(n+d)
+ d= d% n
+ int temp[d];
+ for(int i = 0; i < d;i++){
+ temp[i] = arr[i];
+ }
+  for(int i = d; i < n;i++){
+  arr[i-d] = arr[i];
+ }
+   for(int i = n- d; i < n;i++){
+   arr[i] = temp[n-(i-d)];
+ }
+*/
+
+// optimal / better = O(2n)
+// reverse(a , a+d) then reverse reverse (a+d ,n) then reverse the whole array (a,a+n)
+class Solution {
+public:
+    void rotate(vector<int>& nums, int k) {
+        int n = nums.size();
+        k = k % n;
+        int d = n -k;
+        reverse(nums.begin(),nums.begin()+ d);
+        reverse(nums.begin() + d,nums.end());
+        reverse(nums.begin() , nums.end());
+        
+    }
+};
+
 
 int main(){
    int arr[5] = {3,2,1,5,2};
