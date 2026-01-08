@@ -90,6 +90,12 @@ public:
 
 // optimal / better = O(2n)
 // reverse(a , a+d) then reverse reverse (a+d ,n) then reverse the whole array (a,a+n)
+// for reversing right = 
+
+// reverse(a,a+n)
+// reverse(a,a+k)
+// reverse(a+k,a+n)
+
 class Solution {
 public:
     void rotate(vector<int>& nums, int k) {
