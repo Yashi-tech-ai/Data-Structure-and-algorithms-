@@ -109,6 +109,12 @@ public:
     }
 };
 
+// leetcode 283 = move all zeros at last of an array 
+// brute = check if element is 0 and then put them into temp array and then put them back in original array O(2n) and sc = O(N)
+// optimal = j will check for 0 and i for non zero and then swap with each other 
+
+
+
 
 int main(){
    int arr[5] = {3,2,1,5,2};

@@ -1,4 +1,4 @@
-// Hashing = prestoring and fetching to allow for quick success 
+// Hashing = prestoring and fetching to allow for quick access 
 #include<bits/stdc++.h>
 using namespace std;
 /* for hash array the maximum we can input is 
