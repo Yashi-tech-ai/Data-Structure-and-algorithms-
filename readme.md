@@ -9,3 +9,4 @@ This repository contains my data structures and algorithms practice.
 - Hashing → integer and character hashing , also using maps .
 - Sorting → selection sort , bubble sort , insertion sort , merge sort , quick sort
 - arrays → questions on arrays
+- Binary search → questions on binary search 
