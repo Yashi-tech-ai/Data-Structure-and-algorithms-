@@ -167,6 +167,20 @@ public:
     }
 };
 
+// leetcode 136
+// brute = linear search 
+// better = hashing {O(3N) but what if they have negtives as well so we use map so {Tc = O(n/2 + 1) as every element appear twice }}
+// optimal = Xor {TC = O(N)}
+class Solution {
+public:
+    int singleNumber(vector<int>& nums) {
+        int xor1 = 0;
+        for(int i = 0;i < nums.size();i++){
+            xor1 = xor1^nums[i];
+        }
+        return xor1;
+    }
+};
 int main(){
    int arr[5] = {3,2,1,5,2};
    cout << seclargest(arr,5);
