@@ -12,7 +12,7 @@ sc =  O(n1 + n2) + O(n1 + n2)
 */
 
 // optimal = by two pointer i and j iterating one for each array 
-// 
+// Tc = O(n1+n2) , no reptition allowed 
 
 #include<bits/stdc++.h>
 using namespace std;
