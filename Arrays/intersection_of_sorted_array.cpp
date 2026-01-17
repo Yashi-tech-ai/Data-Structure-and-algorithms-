@@ -3,6 +3,9 @@ using namespace std;
 // repitition is allowed 
 // brute - take a elemnent from one array and check for it in the other one using nested loop 
 //Tc = O(n1 xn2) and sc = O(n2)
+
+// optimal = 
+// Tc = O(n1 + n2) and sc = O(1)
 int main(){
 vector<int> a = { 1, 2, 3,4,6 ,8}; 
 vector<int> b = { 2,2,2, 5, 8, 90};
