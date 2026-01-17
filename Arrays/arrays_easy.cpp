@@ -113,7 +113,39 @@ public:
 // brute = check if element is 0 and then put them into temp array and then put them back in original array O(2n) and sc = O(N)
 // optimal = j will check for 0 and i for non zero and then swap with each other = O(N) no extra space 
 
-
+// leetcode = 268 
+// brute = nested loops and if (a[j] == i) okay but if not then cout i 
+// TC = O(n^2 ) 
+// better = using hashing 
+// TC = O(2N) and SC = O(N)
+// optimal(1) = expected sum - actual sum { TC = O(N) ad sc = O(1)}
+class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+       int n = nums.size();
+       int n_sum = (n*(n+1)/2);
+       int sum = 0;
+       for(int i = 0;i < n;i++){
+        sum += nums[i];
+       }
+       int missing = n_sum - sum;
+       return missing;
+    }
+};
+// optimal(2) = XOR => a^a = 0{same complexities}
+/*class Solution {
+public:
+    int missingNumber(vector<int>& nums) {
+        int n = nums.size();
+        int xor1 = 0; int xor2 = 0;
+        for(int i = 0; i < n-1;i++){
+            xor2 = xor2^nums[i];
+            xor1 = xor1^nums[i+1];
+        }
+        xor1 = xor1^n;
+        return xor1^xor2;
+    }
+};*/
 
 
 
