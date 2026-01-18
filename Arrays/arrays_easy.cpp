@@ -181,6 +181,31 @@ public:
         return xor1;
     }
 };
+
+
+// Longest subarray with sum K {positives}
+// brute = by generating all subarray and then keeping a sum of it and then max(previous length , the one came right now)
+// better = by  hashing 
+int longestarray(vector <int> a , long long k){
+    map<long,long> presumMap;
+    long long sum = 0;
+    int maxlen = 0;
+    for (int i = 0; i < a.size(); i++)
+    {
+        sum+= a[i];
+        if(sum == k){
+            maxlen = max(maxlen,i+1);
+        }
+        long long rem = sum - k;
+        if(presumMap.find(rem) != presumMap.end()){
+               int len = i - presumMap[rem];  
+               maxlen = max(maxlen,len);
+        }
+        presumMap[sum] = i;
+    }
+    return maxlen;
+}
+
 int main(){
    int arr[5] = {3,2,1,5,2};
    cout << seclargest(arr,5);
