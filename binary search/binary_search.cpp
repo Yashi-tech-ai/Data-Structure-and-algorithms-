@@ -15,7 +15,6 @@ int main(){
         else if (nums < mid) high = mid -1;
         else low = mid +1;
     }
-     // recursive approach 
      
     return 0;
 }
