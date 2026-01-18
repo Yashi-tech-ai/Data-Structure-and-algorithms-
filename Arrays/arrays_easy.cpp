@@ -201,7 +201,8 @@ int longestarray(vector <int> a , long long k){
                int len = i - presumMap[rem];  
                maxlen = max(maxlen,len);
         }
-        presumMap[sum] = i;
+        if(presumMap.find(sum) == presumMap.end())
+        { presumMap[sum] = i;}
     }
     return maxlen;
 }
