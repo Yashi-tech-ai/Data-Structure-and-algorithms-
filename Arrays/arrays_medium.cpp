@@ -17,6 +17,23 @@ string read(int n , vector<int> a , int target){
   return "No";
   
 }
-
 // optimal = we sort the array and then take two pointers i and j at 0 and n index and if the sum(i+j) is less than target then increase the 
-// i the index by one and vice versa
+// i the index by one and vice versa but this is for yes or no based question 
+// for indexes to be told we will first store the array in some data structure with original indexes.
+// tc = O(N) + O(N log N)-> for sorting
+string read(int n , vector<int> a , int target){
+   int left = 0; int right = n-1;
+   sort(a.begin(), a.end());
+   while(left < right){
+    int sum = a[left] + a[right];
+    if(sum == target){
+        return "yes";
+    }
+    else if(sum < target){
+        left++;
+    }
+    else right--;
+
+   }
+  return "NO";
+} 
