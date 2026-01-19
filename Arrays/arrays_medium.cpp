@@ -17,3 +17,6 @@ string read(int n , vector<int> a , int target){
   return "No";
   
 }
+
+// optimal = we sort the array and then take two pointers i and j at 0 and n index and if the sum(i+j) is less than target then increase the 
+// i the index by one and vice versa
