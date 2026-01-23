@@ -1,6 +1,8 @@
 // lower bound = smallest index such that the number at that index is greater than or equal to the given number considering the array is sorted 
 // if no element possible then its the hypothetical index right after the last index 
-// implementation by binary search 
+// implementation by binary search = TC = O(log N {base 2})
+
+// lb = lower_bound(arr.begin(),array.end(),n) -  array.begin();
 #include<bits/stdc++.h>
 using namespace std;
 int lowerbound(vector<int> a, int n , int x){
