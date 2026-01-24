@@ -23,3 +23,19 @@ public:
         return low;
     }
 };
+
+// Floor and ciel problem = {floor = largest number less than x and ciel = smallest number greater than x}
+int floor(vector<int> arr, int x){
+    int ans = -1;
+    int low = 0 ; int high = arr.size() - 1;
+    while (low <= high)
+    {
+        int mid = (low + high) / 2;
+        if(arr[mid] <= x){
+            ans = arr[mid];
+            low = mid+1;
+        }
+        else high = mid -1;
+    }
+    return ans;
+}
