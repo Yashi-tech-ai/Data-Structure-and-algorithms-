@@ -9,4 +9,4 @@ This repository contains my data structures and algorithms concepts and leetcode
 - Hashing → integer and character hashing , also using maps .
 - Sorting → selection sort , bubble sort , insertion sort , merge sort , quick sort
 - arrays → questions on arrays
-- Binary search → questions on binary search 
+- Binary search → logic , upper and lower bound , recursive binary search and questions on binary search 
