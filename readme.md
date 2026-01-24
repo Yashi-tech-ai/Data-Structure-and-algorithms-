@@ -1,6 +1,6 @@
 # My DSA Practice
 
-This repository contains my data structures and algorithms practice.
+This repository contains my data structures and algorithms concepts and leetcode problems .
 
 ## Folders
 - C++ → Solutions in C++ language , also contains STL.
