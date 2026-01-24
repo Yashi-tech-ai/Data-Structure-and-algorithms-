@@ -83,6 +83,7 @@ int majorityelelement(vector <int> v){
   return -1;
 }
 
+// moore's voting algorithm
 class Solution {
 public:
     int majorityElement(vector<int>& nums) {
