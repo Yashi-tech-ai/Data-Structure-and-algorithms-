@@ -64,3 +64,21 @@ public:
         }
     }
 };
+
+// leetcode = 169 {majority element}
+// brute = pick the first element and then check through the entire array . = {o(n^2)}
+//  better = hashing and using hashmap and then iterate in it = {tc= O(N log N) + O(N) and sc = O(N)}
+int majorityelelement(vector <int> v){
+  map<int,int> mpp;
+ int n = v.size();
+  for (int i = 0; i < n; i++)
+  {
+    mpp[v[i]]++;
+  }
+  for(auto it: mpp){
+    if(it.second > n/2){
+      return it.first;
+    }
+  }
+  return -1;
+}
