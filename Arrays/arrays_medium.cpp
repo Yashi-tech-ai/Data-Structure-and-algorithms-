@@ -37,3 +37,9 @@ string read(int n , vector<int> a , int target){
    }
   return "NO";
 } 
+
+
+// leetcode = 75 {sort 1s,2s and 3s}
+// brute = sort using merge or quick sort
+// better = count the number and increase then by for loop print them all uptill the count = {O(N)}
+// optimal = 
