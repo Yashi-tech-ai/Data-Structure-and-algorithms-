@@ -39,3 +39,49 @@ int floor(vector<int> arr, int x){
     }
     return ans;
 }
+
+// leetcode = 34 {first and last occurence of the element }
+// brute = linear search through the array O(N)
+// better = using lower and upper bound - 1 {but if the element is not present in the array } = { TC = O(2log N (base 2))}
+int lowerbound(vector<int> a, int n , int x){
+  int low = 0; int high = n-1;
+  int ans = n ;
+  while(low < high){
+    int mid = (low + high) / 2;
+    if(a[mid] >= x){
+        ans = mid;
+        high = mid -1;
+    }
+   else {
+    low = mid + 1;
+   }
+   return ans;
+}
+}
+
+int upperbound(vector<int> a, int n , int x){
+  int low = 0; int high = n-1;
+  int ans = n ;
+  while(low < high){
+    int mid = (low + high) / 2;
+    if(a[mid] > x){
+        ans = mid;
+        high = mid -1;
+    }
+   else {
+    low = mid + 1;
+   }
+   return ans;
+}
+}
+
+// optimal = just by using binary search 
+int main(){
+    vector <int> arr = {12,34,56,67,67,67,89};
+    int x = 67; int n = arr.size();
+int lb = lowerbound(arr,n,x);
+if(lb == n || arr[lb]!= x) return {-1};
+int ub = upperbound(arr,n,x);
+
+return 0;
+}
