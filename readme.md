@@ -3,7 +3,7 @@
 This repository contains my data structures and algorithms concepts and leetcode problems .
 
 ## Folders
-- C++ → Time and space complexities , patterns , Solutions in C++ language and contains STL.
+- C++ → Time and space complexities , patterns , Solutions in C++ language and contains STL and object oriented programming.
 - Maths → Algorithmic math problems
 - Recursion → Recursion-based problems
 - Hashing → integer and character hashing , also using maps .
