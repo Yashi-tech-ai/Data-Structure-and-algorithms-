@@ -9,4 +9,5 @@ This repository contains my data structures and algorithms concepts and leetcode
 - Hashing → integer and character hashing , also using maps .
 - Sorting → selection sort , bubble sort , insertion sort , merge sort , quick sort
 - arrays → linear search , kadane's algorithm , intersection and union of sorted arrays , leetcode problems on arrays.
-- Binary search → logic , upper and lower bound , recursive binary search and leetcode problems on binary search 
+- Binary search → logic , upper and lower bound , recursive binary search and leetcode problems on binary search .
+- Linked List → singley linked list
