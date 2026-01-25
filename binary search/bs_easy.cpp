@@ -76,6 +76,58 @@ int upperbound(vector<int> a, int n , int x){
 }
 
 // optimal = just by using binary search 
+int firstreccurence(vector<int> &arr,int n , int k){
+    int low = 0; int high = n - 1;
+    int first = -1;
+    while (low <= high)
+    {
+       int mid = (low+high)/ 2;
+       if(arr[mid] == k){
+        first = mid;
+        high = mid-1;
+       }
+       else if(arr[mid] < k){
+        low = mid + 1;
+
+       }
+       else high = mid - 1;
+    }
+    return first;
+}
+int lastreccurence(vector<int> &arr,int n , int k){
+    int low = 0; int high = n - 1;
+    int last  = -1;
+    while (low <= high)
+    {
+       int mid = (low+high)/ 2;
+       if(arr[mid] == k){
+        last = mid;
+        low = mid + 1;
+       }
+       else if(arr[mid] < k){
+        low = mid + 1;
+
+       }
+       else high = mid - 1;
+    }
+    return last;
+}
+
+pair<int,int> occurence(vector<int> &arr, int n , int k){
+    int first = firstreccurence(arr,n,k);
+    if(first == -1) return {-1,-1};
+    int last = lastreccurence(arr,n,k);
+    return {first, last};
+}
+// to count occurences of the number :-
+int count(vector<int> &arr, int n , int x){
+    pair<int,int> ans = occurence(arr,n,x);
+    if(ans.first == -1) return 0;
+    return ans.second - ans.first + 1;
+}
+
+
+
 int main(){
     vector <int> arr = {12,34,56,67,67,67,89};
     int x = 67; int n = arr.size();
