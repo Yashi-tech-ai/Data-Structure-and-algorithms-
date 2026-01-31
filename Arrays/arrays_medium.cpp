@@ -130,3 +130,28 @@ public:
         return maxprofit;
     }
 };
+
+
+// leetcode = 2149 {rearrange according to sign}
+// brute = take two arrays positive and negative and iterate through orignal array and assign values in the new array = {TC = O(2N) and SC = O(N)}
+// *** {on observation by this method we see that the positive numbers come at even indexes}
+// brute force approach 2 by creating a new array and checking side by side from original array and assigning number based on *** condition 
+vector <int> rearrangearray(vector<int> &arr){
+  int n = arr.size();
+  vector<int> ans(n,0);
+  int posindex = 0 ; int negindex = 1;
+  for (int i = 0; i < n; i++)
+  {
+    if(arr[i] < 0){
+        ans[negindex] = arr[i];
+        negindex +- 2;
+    }
+    else{
+     ans[posindex] = arr[i];
+     posindex += 2;
+
+    }
+  }
+  return ans;
+  
+}
