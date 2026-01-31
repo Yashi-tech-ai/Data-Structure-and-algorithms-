@@ -135,7 +135,7 @@ public:
 // leetcode = 2149 {rearrange according to sign}
 // brute = take two arrays positive and negative and iterate through orignal array and assign values in the new array = {TC = O(2N) and SC = O(N)}
 // *** {on observation by this method we see that the positive numbers come at even indexes}
-// brute force approach 2 by creating a new array and checking side by side from original array and assigning number based on *** condition 
+// optimal =  approach 2 by creating a new array and checking side by side from original array and assigning number based on *** condition = {TC = O(N+N/2) and SC = O(N)}
 vector <int> rearrangearray(vector<int> &arr){
   int n = arr.size();
   vector<int> ans(n,0);
@@ -155,3 +155,47 @@ vector <int> rearrangearray(vector<int> &arr){
   return ans;
   
 }
+
+// variety 2 = when elements left (i.e if not equal number of positives and negatives) to add the remaining numbers with order = {TC = O(2N) and SC = O(N)}
+vector<int> alternatenumbers(vector<int> &nums){
+  vector<int> pos, neg;
+  int n = nums.size();
+  for (int i = 0; i < n; i++)
+  {
+    if(nums[i] > 0){
+        pos.push_back(nums[i]);
+    }
+    else{
+        neg.push_back(nums[i]);
+    }
+  }
+  if(pos.size() > neg.size()){
+    for (int i = 0; i < neg.size(); i++)
+    {
+        nums[2*i] = pos[i];
+        nums[2*i+1] = neg[i];
+    }
+    int index = neg.size() * 2;
+    for (int i = neg.size(); i < pos.size(); i++)
+    {
+        nums[index] = pos[i];
+        index++; 
+    }
+    
+  }
+  else{
+    for (int i = 0; i < pos.size(); i++)
+    {
+        nums[2*i] = pos[i];
+        nums[2*i+1] = neg[i];
+    }
+    int index = pos.size() * 2;
+    for (int i = pos.size(); i < neg.size(); i++)
+    {
+        nums[index] = neg[i];
+        index++; 
+    }
+  }
+  return nums;
+}
+
