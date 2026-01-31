@@ -111,3 +111,22 @@ public:
         return -1;
     }
 };
+
+
+// leetcode = 121 {Buy and sell stock }
+// in the given array buy(minimum price) will come first then sell so maximize the profit 
+// we keep a track of profit and increment .
+class Solution {
+public:
+    int maxProfit(vector<int>& prices) {
+        int mini = prices[0];
+        int maxprofit = 0;
+        int n = prices.size();
+        for(int i = 0;i < n; i++){
+            int cost = prices[i] - mini;
+            maxprofit = max(maxprofit, cost);
+            mini = min(mini,prices[i]);
+        }
+        return maxprofit;
+    }
+};
