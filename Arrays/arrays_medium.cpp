@@ -272,4 +272,9 @@ public:
 
 // leetcode = 31 {Next permutations} = in sorted order and then the original number will be found and the next permutation will be returned 
 // brute = generate all the possible permuatation through recursion and then do a linear search = O(n!)
-// better = 
+// better = already built in stl in c++ 
+vector<int> nextgreaterpermutation(vector<int> &arr){
+   next_permutation(arr.begin(),arr.end());
+   return arr;
+}
+// optimal = 
