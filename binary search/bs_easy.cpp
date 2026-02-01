@@ -128,6 +128,87 @@ int count(vector<int> &arr, int n , int x){
 
 
 
+// leetcode = 33 {search in rotated sorted array (no duplicates)}
+class Solution {
+public:
+    int search(vector<int>& nums, int target) {
+        int low = 0, high = nums.size() - 1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            if (nums[mid] == target) return mid;
+
+            // Check if left half is sorted
+            if (nums[low] <= nums[mid]) {
+                // Target is in the left sorted half
+                if (nums[low] <= target && target < nums[mid])
+                    high = mid - 1;
+                else
+                    low = mid + 1;
+            } 
+            // Right half must be sorted
+            else {
+                // Target is in the right sorted half
+                if (nums[mid] < target && target <= nums[high])
+                    low = mid + 1;
+                else
+                    high = mid - 1;
+            }
+        }
+
+        return -1; // target not found
+    }
+};
+
+// leetcode = 81 {search in roated sorted array (with duplicates)}
+class Solution {
+public:
+    bool search(vector<int>& nums, int target) {
+        int low = 0, high = nums.size() - 1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            if (nums[mid] == target) return true;
+
+            // When duplicates prevent us from knowing the sorted side
+            if (nums[low] == nums[mid] && nums[mid] == nums[high]) {
+                low++;
+                high--;
+            }
+            // Left half is sorted
+            else if (nums[low] <= nums[mid]) {
+                if (nums[low] <= target && target < nums[mid])
+                    high = mid - 1;
+                else
+                    low = mid + 1;
+            }
+            // Right half is sorted
+            else {
+                if (nums[mid] < target && target <= nums[high])
+                    low = mid + 1;
+                else
+                    high = mid - 1;
+            }
+        }
+
+        return false; // target not found
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
 int main(){
     vector <int> arr = {12,34,56,67,67,67,89};
     int x = 67; int n = arr.size();
