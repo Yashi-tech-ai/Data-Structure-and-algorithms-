@@ -197,7 +197,28 @@ public:
     }
 };
 
-
+// leetcode = 153 {find minimum in rotated sorted array with no duplicates}
+// use the appraoch used for search in rotated array and the first index of the sorted half will be the answer 
+class Solution {
+public:
+    int findMin(vector<int>& nums) {
+        int n = nums.size();
+        int low = 0; int high = n-1;
+        int ans = INT_MAX;
+        while(low <= high){
+            int mid = (low +high)/2 ;
+            if(nums[low] <= nums[mid]){
+                ans = min(ans,nums[low]);
+                low = mid +1;
+            }
+            else{
+                high = mid -1;
+                ans = min(ans, nums[mid]);
+            }
+        }
+      return ans;
+    }
+};
 
 
 
