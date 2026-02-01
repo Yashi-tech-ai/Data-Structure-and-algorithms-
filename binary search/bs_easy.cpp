@@ -198,7 +198,7 @@ public:
 };
 
 // leetcode = 153 {find minimum in rotated sorted array with no duplicates}
-// use the appraoch used for search in rotated array and the first index of the sorted half will be the answer 
+// use the appraoch used for search in rotated array and the first index of the sorted half will be the answer = {O(log N(base 2))}
 class Solution {
 public:
     int findMin(vector<int>& nums) {
@@ -207,6 +207,11 @@ public:
         int ans = INT_MAX;
         while(low <= high){
             int mid = (low +high)/2 ;
+            // if search space is sorted already then the nums[low] will always be the minimum 
+            if(nums[low] <= nums[high]){
+                ans = min(ans,nums[low]);
+                break;
+            }
             if(nums[low] <= nums[mid]){
                 ans = min(ans,nums[low]);
                 low = mid +1;
