@@ -233,3 +233,8 @@ public:
         reverse(nums.begin()+ ind + 1, nums.end());
     }
 };
+
+
+
+// Leader in an array problem (the number in the array such that right of the numbers of this index are smaller than the number)
+// brute = take one index and do linear search = {O(N^2)}
