@@ -264,6 +264,18 @@ public:
     }
 
 
+// leetcode 540 = Single element in an sorted array 
+// brute = check element one by one and their left and right side , by XOR , by Map = {O(N)}
+
+
+
+
+
+
+
+
+
+
 
 
 
