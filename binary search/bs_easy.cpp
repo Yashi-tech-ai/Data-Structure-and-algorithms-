@@ -227,6 +227,41 @@ public:
 
 
 
+// Number of times an array has been rotated
+// find the minimum in the rotated array and the index of it will be the answer 
+    int findMin(vector<int>& nums) {
+        int n = nums.size();
+        int low = 0; int high = n-1;
+        int ans = INT_MAX;
+        int index = -1;
+        while(low <= high){
+            int mid = (low +high)/2 ;
+            // if search space is sorted already then the nums[low] will always be the minimum 
+            if(nums[low] <= nums[high]){
+                if(nums[low] < nums[high]){
+                    index = low;
+                    ans = nums[low];
+                }
+                break;
+            }
+            if(nums[low] <= nums[mid]){
+                if(nums[low] < ans){
+                    index =low;
+                    ans = nums[low];
+                }
+                low = mid +1;
+            }
+            else{
+                high = mid -1;
+                if(nums[mid] < ans){
+                    index = mid;
+                    ans = nums[mid];
+                }
+                ans = min(ans, nums[mid]);
+            }
+        }
+      return index ;
+    }
 
 
 
