@@ -238,3 +238,18 @@ public:
 
 // Leader in an array problem (the number in the array such that right of the numbers of this index are smaller than the number)
 // brute = take one index and do linear search = {O(N^2)}
+// optimal = iterate from back and consider an index max which will be initially the last index and then check from back for comparision = {TC = O(N) and SC = O(N)}
+vector <int> leaderinarray(vector<int> &arr){
+    vector <int> ans;
+    int n = arr.size();
+    int maxi = INT_MIN;
+    for (int i = n -1 ; i >= 0; i--)
+    {
+        if(arr[i] > maxi){
+            ans.push_back(arr[i]);
+        }
+        maxi = max(maxi,arr[i]);
+    }
+
+    return ans;
+}
