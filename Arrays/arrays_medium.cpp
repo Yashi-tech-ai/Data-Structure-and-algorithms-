@@ -257,4 +257,4 @@ vector <int> leaderinarray(vector<int> &arr){
 
 
 // Leetcode = 128 {Longest consecutive sequence }
-// brute - 
+// brute = pick one element and then look for +1, +2 and keep a count = {O(N^2)}
