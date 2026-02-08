@@ -240,6 +240,7 @@ public:
 // brute = take one index and do linear search = {O(N^2)}
 // optimal = iterate from back and consider an index max which will be initially the last index and then check from back for comparision = {TC = O(N) and SC = O(N)}
 vector <int> leaderinarray(vector<int> &arr){
+
     vector <int> ans;
     int n = arr.size();
     int maxi = INT_MIN;
@@ -253,3 +254,7 @@ vector <int> leaderinarray(vector<int> &arr){
 
     return ans;
 }
+
+
+// Leetcode = 128 {Longest consecutive sequence }
+// brute - 
