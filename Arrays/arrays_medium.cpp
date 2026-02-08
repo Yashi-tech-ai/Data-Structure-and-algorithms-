@@ -258,3 +258,16 @@ vector <int> leaderinarray(vector<int> &arr){
 
 // Leetcode = 128 {Longest consecutive sequence }
 // brute = pick one element and then look for +1, +2 and keep a count = {O(N^2)}
+// better = sort and keep a variable for INT_MIN so that no repititon of duplicates appear and then  keep a count 
+/*  count = 0 , longest = 1, prev_smallest = INT_MIN
+for(i = 0 to n ){
+  if(arr[i] - 1 == prev_smaller){
+    count = count + 1
+    prev_smaller = arr[i]}
+    else if (arr[i] != prev_smaller){
+    count = 1
+    prev_smaller = arr[i]
+    }
+   longest = max(longest,count)
+  }
+*/
