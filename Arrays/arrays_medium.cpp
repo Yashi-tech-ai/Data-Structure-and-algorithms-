@@ -257,7 +257,7 @@ vector <int> leaderinarray(vector<int> &arr){
 
 
 // Leetcode = 128 {Longest consecutive sequence }
-// brute = pick one element and then look for +1, +2 and keep a count = {O(N^2)}
+// brute = pick one element and then look for +1, +2 and keep a count = {O(N^3)}
 // better = sort and keep a variable for INT_MIN so that no repititon of duplicates appear and then  keep a count 
 /*  count = 0 , longest = 1, prev_smallest = INT_MIN
 for(i = 0 to n ){
@@ -271,3 +271,31 @@ for(i = 0 to n ){
    longest = max(longest,count)
   }
 */
+
+// optimal = by using unordered set (removes duplicates and has O(1) lookup) = {TC = O(N + 2N = 3N) and SC = {O(N)}}
+class Solution {
+public:
+    int longestConsecutive(vector<int>& nums) {
+        int n = nums.size();
+        if(n == 0) return 0;
+        int longest = 1;
+        unordered_set<int> st;
+        for(int i = 0;i <n;i++){
+            st.insert(nums[i]);
+        }
+
+        for(auto it:st){
+            if(st.find(it-1) == st.end()){
+                int cnt = 1;
+                int x = it;
+                while(st.find(x+1) != st.end()){
+                    x = x+1;
+                    cnt = cnt +1;
+
+                }
+                longest = max(longest,cnt);
+            }
+        }
+        return longest;
+    }
+};
