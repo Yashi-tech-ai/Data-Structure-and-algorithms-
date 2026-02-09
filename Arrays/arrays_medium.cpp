@@ -306,7 +306,7 @@ public:
 // it may also consider a zero due to previous one and damage the original matrix and then we can by doing one more iteration convert all 
 // - 1s into 0  = {TC = O(N^3)}
 // Better = we keep two separate arrays for row and coloum to mark if even any one 0 occurs and then at the end iterate and check with 
-// the new array created and mark the 0s.
+// the new array created and mark the 0s. = {TC = O(2 x n x m) and SC = O(n xm )
 
 vector<vector<int>> zeromatrix(vector<vector<int>> &arr, int n , int m  ){
    int col[n] = {0};
@@ -332,3 +332,46 @@ vector<vector<int>> zeromatrix(vector<vector<int>> &arr, int n , int m  ){
    }   
    return arr;
 }
+
+// optimal = rather than taking two separate arrays we consider the first row and coloumn as the arrays required 
+class Solution {
+public:
+    void setZeroes(vector<vector<int>>& matrix) {
+        int n = matrix.size();
+        int m = matrix[0].size();
+        int col0 = 1;
+        // Step 1: mark rows & columns
+        for(int i = 0; i < n; i++){
+            for(int j = 0; j < m; j++){
+                if(matrix[i][j] == 0){
+                    matrix[i][0] = 0;
+                    if(j != 0){
+                        matrix[0][j] = 0;
+                    } else {
+                        col0 = 0;
+                    }
+                }
+            }
+        }
+        // Step 2: set zeroes using markers
+        for(int i = 1; i < n; i++){
+            for(int j = 1; j < m; j++){
+                if(matrix[i][0] == 0 || matrix[0][j] == 0){
+                    matrix[i][j] = 0;
+                }
+            }
+        }
+        // Step 3: first row
+        if(matrix[0][0] == 0){
+            for(int j = 0; j < m; j++){
+                matrix[0][j] = 0;
+            }
+        }
+        // Step 4: first column
+        if(col0 == 0){
+            for(int i = 0; i < n; i++){
+                matrix[i][0] = 0;
+            }
+        }
+    }
+};
