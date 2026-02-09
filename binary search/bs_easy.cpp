@@ -294,6 +294,13 @@ public:
 };
 
 
+// leetcode = 162 {finding peak element}
+// brute = we check one by one element = {TC = O(N)}
+//  better = we use binary search and keep on elementing the sides which don't have the answer , we also write conditions for edge cases = {TC = O(log N)}
+// optimal = 
+
+
+
 
 
 
