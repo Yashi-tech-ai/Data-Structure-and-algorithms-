@@ -305,4 +305,30 @@ public:
 // brute = we iteratre through the matrix and mark the element of corresponding row and column as -1 rather than 0 cause in next iteration 
 // it may also consider a zero due to previous one and damage the original matrix and then we can by doing one more iteration convert all 
 // - 1s into 0  = {TC = O(N^3)}
+// Better = we keep two separate arrays for row and coloum to mark if even any one 0 occurs and then at the end iterate and check with 
+// the new array created and mark the 0s.
 
+vector<vector<int>> zeromatrix(vector<vector<int>> &arr, int n , int m  ){
+   int col[n] = {0};
+   int row[m] = {0};
+   for (int i = 0; i < n; i++)
+   {
+    for (int j = 0; j < m; j++)
+    {
+        if(arr[i][j] == 0){
+            row[i] = 1;
+            row[j] = 1;
+        }
+    }
+   }
+   for (int i = 0; i < n; i++)
+   {
+    for (int j = 0; j < m; j++)
+    {
+        if(row[i] == 1 || col[j] == 1 ){
+           arr[i][j] == 0;
+        }
+    }
+   }   
+   return arr;
+}
