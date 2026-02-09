@@ -299,3 +299,10 @@ public:
         return longest;
     }
 };
+
+
+// leetcode = 73 {set matrix zero } = as soon as a zero is found in matric the whole corresponding row and coloumn becomes zero
+// brute = we iteratre through the matrix and mark the element of corresponding row and column as -1 rather than 0 cause in next iteration 
+// it may also consider a zero due to previous one and damage the original matrix and then we can by doing one more iteration convert all 
+// - 1s into 0  = {TC = O(N^3)}
+
