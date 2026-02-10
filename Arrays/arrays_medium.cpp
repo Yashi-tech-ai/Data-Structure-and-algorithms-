@@ -378,5 +378,25 @@ public:
 
 
 // leetcode = 48 {Rotate image}
-// brute = [i][j] --> [j][n-i-1] = O(n^2)
+// brute = [i][j] --> [j][n-i-1] = {TC = O(n^2), SC = O(n^2)}
+// optimal = Transpose the matrix(row becomes coloumn and vice versa and the diagonal elements remain the same) 
+// and then reverse every row i.e swap elements from upper triangle to lower triangle 
+class Solution {
+public:
+    void rotate(vector<vector<int>>& matrix) {
+        int n = matrix.size();
+        // transpose
+        for(int i = 0; i < n -1; i++){
+            for(int j = i + 1; j < n;j++ ){
+                swap(matrix[i][j],matrix[j][i]);
+            }
+        }
+        // reversing every row 
+        for(int i = 0 ; i < n;i++){
+            // row = matrix[i]
+            reverse(matrix[i].begin(), matrix[i].end());
+        }
+    }
+};
+
 
