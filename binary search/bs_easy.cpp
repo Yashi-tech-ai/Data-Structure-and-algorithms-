@@ -297,7 +297,26 @@ public:
 // leetcode = 162 {finding peak element}
 // brute = we check one by one element = {TC = O(N)}
 //  better = we use binary search and keep on elementing the sides which don't have the answer , we also write conditions for edge cases = {TC = O(log N)}
-// optimal = 
+// optimal = if the mid is on the increasing slope then elemenate left side and vice versa . when mid on valley is the edge case
+class Solution {
+public:
+    int findPeakElement(vector<int>& nums) {
+        int n = nums.size();
+        int low = 1; int high = n-2;
+        if(n == 1) return 0;
+        if(nums[0] > nums[1]) return 0;
+        if(nums[n -1] > nums[n-2]) return n-1;
+        while(low <= high){
+           int mid = (low + high) / 2;
+           if(nums[mid] > nums[mid -1] && nums[mid] > nums[mid+1]){
+            return mid;
+           }
+           else if(nums[mid] > nums[mid - 1]) low = mid + 1;
+           else high = mid - 1;
+        }
+        return - 1; 
+    }
+};
 
 
 
