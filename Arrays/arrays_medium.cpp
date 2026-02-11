@@ -400,3 +400,8 @@ public:
 };
 
 
+// Leetcode = 54 {Spiral matrix} = print in spiral method 
+// pattern observed is right -> down -> left -> up 
+
+
+
