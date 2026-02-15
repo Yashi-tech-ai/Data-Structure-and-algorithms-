@@ -21,3 +21,4 @@ int floorsqrt(vector<int> &arr){
     return high ;
 }
 
+// Finding nth root of an integer
