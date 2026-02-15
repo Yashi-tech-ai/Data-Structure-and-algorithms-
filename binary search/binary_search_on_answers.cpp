@@ -21,6 +21,8 @@ int floorsqrt(vector<int> &arr){
     return high ;
 }
 
+
+
 // Finding nth root of an integer = 3rd root of 27 = 3 
 //brute = linear search 
 int nrootofm(int k, int m){
@@ -46,6 +48,29 @@ int nrootofm(int k, int m){
 }
 
 // approach 2 to the code 
+long long power(int base, int exp, int limit) {
+    long long result = 1;
+    for (int i = 0; i < exp; i++) {
+        result *= base;
+        if (result > limit) return result;
+    }
+    return result;
+}
+int nrootofm(int k, int m) {
+    int low = 1, high = m;
+
+    while (low <= high) {
+        int mid = low + (high - low) / 2;
+
+        long long val = power(mid, k, m);
+
+        if (val == m) return mid;
+        else if (val < m) low = mid + 1;
+        else high = mid - 1;
+    }
+    return -1;
+}
+
 int main(){
     cout << nrootofm(3,27);
 }
