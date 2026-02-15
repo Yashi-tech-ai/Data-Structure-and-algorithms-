@@ -19,6 +19,5 @@ int floorsqrt(vector<int> &arr){
         else high = mid - 1;
     }
     return high ;
-    
-
 }
+
