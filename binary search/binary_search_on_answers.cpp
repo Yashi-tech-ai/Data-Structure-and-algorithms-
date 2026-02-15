@@ -52,7 +52,7 @@ long long power(int base, int exp, int limit) {
     long long result = 1;
     for (int i = 0; i < exp; i++) {
         result *= base;
-        if (result > limit) return result;
+        if (result > limit) return result; // overflow condition for very large numbers
     }
     return result;
 }
